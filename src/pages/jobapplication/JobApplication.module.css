@@ -1,0 +1,166 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerTitle {
+  margin: 0 0 0.5rem 0;
+}
+
+.headerSubtitle {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.filterContainer {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filterContent {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.filterSelect,
+.searchInput {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #bdc3c7;
+  cursor: pointer;
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  cursor: text;
+}
+
+.applicationsList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.applicationCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid;
+  transition: box-shadow 0.3s;
+}
+
+.applicationCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.jobTitle {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.jobInfo {
+  margin: 0.25rem 0;
+  color: #7f8c8d;
+}
+
+.jobInfo strong {
+  color: #2c3e50;
+}
+
+.jobSalary {
+  margin: 0.25rem 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.statusContainer {
+  text-align: right;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cardFooter {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ecf0f1;
+}
+
+.footerLabel {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 0.85rem;
+}
+
+.footerValue {
+  margin: 0.25rem 0 0 0;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.footerRight {
+  text-align: right;
+}
+
+.detailsButton {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.detailsButton:hover {
+  background-color: #2980b9;
+}
+

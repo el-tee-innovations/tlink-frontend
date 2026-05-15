@@ -1,0 +1,313 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerTitle {
+  margin: 0 0 0.5rem 0;
+}
+
+.headerSubtitle {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.tabsContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.tabButton {
+  padding: 1rem 1.5rem;
+  background-color: transparent;
+  color: #2c3e50;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.tabButton.active {
+  background-color: #3498db;
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+.filtersContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.filterGroup {
+  display: block;
+}
+
+.filterLabel {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.resetButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.loadingContainer {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 2rem;
+}
+
+.emptyStateCard {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.emptyStateText {
+  color: #7f8c8d;
+}
+
+.assessmentCard {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.assessmentTitle {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.assessmentDescription {
+  margin: 0.5rem 0;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.tagsContainer {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tagCategory {
+  padding: 0.25rem 0.75rem;
+  background-color: #e3f2fd;
+  color: #1976d2;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.tagDifficulty {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.tagDifficulty.advanced {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.tagDifficulty.intermediate {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.tagDifficulty.beginner {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.assessmentDetails {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.detailItem {
+  margin: 0.25rem 0;
+}
+
+.attemptStatus {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+.attemptStatus.passed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.attemptStatus.failed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.attemptStatusTitle {
+  margin: 0;
+  font-weight: bold;
+}
+
+.attemptScore {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+}
+
+.attemptDate {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.assessmentLink {
+  margin-top: auto;
+  padding: 0.75rem 1rem;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+}
+
+.historyContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.tableHeaderCell {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tableRow {
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.tableCell {
+  padding: 1rem;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.statusBadge.passed {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.statusBadge.inProgress {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.statusBadge.notPassed {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.resultLink {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.backLink {
+  margin-top: 2rem;
+}
+
+.backLinkStyle {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cellSmall {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+

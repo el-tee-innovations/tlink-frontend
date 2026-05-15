@@ -1,0 +1,117 @@
+/* Card Component Styles */
+
+.card {
+  background-color: var(--white);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+/* Padding variants */
+.none {
+  padding: 0;
+}
+
+.sm {
+  padding: var(--spacing-sm);
+}
+
+.md {
+  padding: var(--spacing-md);
+}
+
+.lg {
+  padding: var(--spacing-lg);
+}
+
+.xl {
+  padding: var(--spacing-xl);
+}
+
+/* Shadow variants */
+.none {
+  box-shadow: none;
+}
+
+.shadowSm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadowMd {
+  box-shadow: var(--shadow-md);
+}
+
+.shadowLg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadowXl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Border and rounded */
+.border {
+  border: 1px solid var(--gray-200);
+}
+
+.rounded {
+  border-radius: var(--border-radius-lg);
+}
+
+/* Hover effect */
+.hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Clickable */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Card sections */
+.header {
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-100);
+  margin-bottom: var(--spacing-md);
+}
+
+.body {
+  flex: 1;
+}
+
+.footer {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--gray-100);
+  margin-top: var(--spacing-md);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sm {
+    padding: var(--spacing-xs);
+  }
+
+  .md {
+    padding: var(--spacing-sm);
+  }
+
+  .lg {
+    padding: var(--spacing-md);
+  }
+
+  .xl {
+    padding: var(--spacing-lg);
+  }
+
+  .header,
+  .footer {
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+  }
+}
+

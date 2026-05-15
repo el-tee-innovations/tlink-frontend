@@ -1,0 +1,147 @@
+/* Loading Skeleton Component Styles */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+  background-size: 200% 100%;
+  border-radius: var(--border-radius-md);
+}
+
+.animated {
+  animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Variants */
+.text {
+  height: 1rem;
+  border-radius: var(--border-radius-sm);
+}
+
+.rectangular {
+  border-radius: var(--border-radius-md);
+}
+
+.circular {
+  border-radius: var(--border-radius-full);
+}
+
+.card {
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* Pre-built skeleton components */
+.textLine {
+  margin-bottom: var(--spacing-xs);
+}
+
+.cardSkeleton {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 0;
+}
+
+.cardContent {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.cardTitle {
+  border-radius: var(--border-radius-sm);
+}
+
+.cardActions {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.tableSkeleton {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.tableHeader {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.tableRow {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.tableRow:last-child {
+  border-bottom: none;
+}
+
+.tableCell {
+  flex: 1;
+  border-radius: var(--border-radius-sm);
+}
+
+.avatar {
+  border-radius: var(--border-radius-full);
+}
+
+.button {
+  border-radius: var(--border-radius-md);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, var(--gray-600) 25%, var(--gray-700) 50%, var(--gray-600) 75%);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animated {
+    animation: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .tableHeader,
+  .tableRow {
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .cardContent {
+    padding: var(--spacing-sm);
+  }
+}
+

@@ -1,0 +1,223 @@
+/* Button Component Styles */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-color: var(--secondary-color);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--secondary-hover);
+  border-color: var(--secondary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.success {
+  background-color: var(--success-color);
+  color: var(--white);
+  border-color: var(--success-color);
+}
+
+.success:hover:not(:disabled) {
+  background-color: var(--success-color);
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.warning {
+  background-color: var(--warning-color);
+  color: var(--white);
+  border-color: var(--warning-color);
+}
+
+.warning:hover:not(:disabled) {
+  background-color: var(--warning-color);
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.error {
+  background-color: var(--error-color);
+  color: var(--white);
+  border-color: var(--error-color);
+}
+
+.error:hover:not(:disabled) {
+  background-color: var(--error-color);
+  filter: brightness(0.9);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.outline:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--gray-700);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--gray-100);
+  transform: translateY(-1px);
+}
+
+/* Sizes */
+.sm {
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-sm);
+  height: 2rem;
+  min-width: 2rem;
+}
+
+.md {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--font-size-base);
+  height: 2.5rem;
+  min-width: 2.5rem;
+}
+
+.lg {
+  padding: 1rem 2rem;
+  font-size: var(--font-size-lg);
+  height: 3rem;
+  min-width: 3rem;
+}
+
+.xl {
+  padding: 1.25rem 2.5rem;
+  font-size: var(--font-size-xl);
+  height: 3.5rem;
+  min-width: 3.5rem;
+}
+
+/* States */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.loading {
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.loadingText {
+  opacity: 0.7;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: var(--spacing-sm);
+}
+
+.spinnerDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: buttonSpinner 1.4s ease-in-out infinite both;
+}
+
+.spinnerDot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.spinnerDot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes buttonSpinner {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .sm {
+    padding: 0.5rem 0.75rem;
+    font-size: var(--font-size-xs);
+  }
+
+  .md {
+    padding: 0.625rem 1rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .lg {
+    padding: 0.75rem 1.25rem;
+    font-size: var(--font-size-base);
+  }
+
+  .xl {
+    padding: 1rem 1.5rem;
+    font-size: var(--font-size-lg);
+  }
+}
+

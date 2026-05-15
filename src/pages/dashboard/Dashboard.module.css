@@ -1,0 +1,191 @@
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.headerTitle {
+  margin: 0 0 0.5rem 0;
+}
+
+.headerSubtitle {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.statLabel {
+  margin: 0.5rem 0 0 0;
+  color: #7f8c8d;
+}
+
+.section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+}
+
+.viewAllLink {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+.jobList {
+  display: grid;
+  gap: 1rem;
+}
+
+.jobCard {
+  border: 1px solid #ecf0f1;
+  border-radius: 6px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.jobCard:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
+}
+
+.jobContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.jobTitle {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.jobInfo {
+  margin: 0.25rem 0;
+  color: #7f8c8d;
+  font-size: 0.95rem;
+}
+
+.jobSalary {
+  margin: 0.5rem 0 0 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.applyButton {
+  padding: 0.5rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.applyButton:hover {
+  background-color: #2980b9;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.tableHeader th {
+  text-align: left;
+  padding: 1rem;
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+.tableRow {
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.tableRow td {
+  padding: 1rem;
+  color: #2c3e50;
+}
+
+.tableCellSmall {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+.statusBadge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: white;
+}
+
+.statusBadge.pending {
+  background-color: #f39c12;
+}
+
+.statusBadge.reviewed {
+  background-color: #27ae60;
+}
+

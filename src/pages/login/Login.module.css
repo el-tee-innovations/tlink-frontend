@@ -1,0 +1,80 @@
+.container {
+  padding: 2rem;
+  max-width: 400px;
+  margin: 5rem auto;
+}
+
+.errorAlert {
+  color: red;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.warningAlert {
+  color: orange;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid orange;
+  border-radius: 4px;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.submitButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.centerText {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.centerText a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.centerText a:hover {
+  text-decoration: underline;
+}
+
