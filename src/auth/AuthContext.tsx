@@ -1,9 +1,8 @@
 import React, { createContext, useReducer, useCallback, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { AuthState, User } from '../types/auth';
-import { validateToken, logout as logoutApi } from '../api/authApi';
-import { clearAllAuth, getToken, setToken, setUser } from '../api/httpClient';
-import { isDevModeEnabled, getMockUser, getMockToken } from '../utils/devMode';
+import { validateToken } from '../api/authApi';
+import { clearAllAuth, getToken } from '../api/httpClient';
 
 export interface AuthContextType extends AuthState {
   login: (user: User, token: string) => void;
@@ -14,7 +13,7 @@ export interface AuthContextType extends AuthState {
 }
 
 // Create context with undefined default - this ensures TypeScript catches missing provider
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+export const  AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Action types for reducer
 type AuthAction =
@@ -133,20 +132,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
     try {
       // In dev mode, auto-login with mock user
-      if (isDevModeEnabled()) {
-        const mockUser = getMockUser();
-        const mockToken = getMockToken();
-
-        // Store mock credentials for consistency
-        setToken(mockToken);
-        setUser(mockUser);
-
-        dispatch({
-          type: 'INIT_SUCCESS',
-          payload: mockUser as User,
-        });
-        return;
-      }
 
       // Normal production flow
       // Check if token exists in localStorage
@@ -181,9 +166,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     } catch (error) {
       console.error('Auth initialization error:', error);
       // In dev mode, don't clear auth on error - just fail gracefully
-      if (!isDevModeEnabled()) {
-        clearAllAuth();
-      }
       dispatch({
         type: 'INIT_FAILURE',
         payload: error instanceof Error ? error.message : 'Failed to initialize auth',
@@ -205,16 +187,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
    * Logout action - clears auth state and makes logout API call
    */
   const logout = useCallback(async () => {
-    try {
-      // Skip API call in dev mode
-      if (!isDevModeEnabled()) {
-        await logoutApi();
-      }
-    } catch (error) {
-      console.error('Logout error:', error);
-    } finally {
-      dispatch({ type: 'LOGOUT' });
-    }
+
   }, []);
 
   const setError = useCallback((error: string | null) => {

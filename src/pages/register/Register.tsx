@@ -9,7 +9,6 @@ export const Register: React.FC = () => {
   const navigate = useNavigate();
   const { isAuthenticated, login } = useAuth();
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
     firstName: '',
@@ -42,8 +41,8 @@ export const Register: React.FC = () => {
 
     try {
       // Validate inputs
-      if (!formData.username || !formData.email || !formData.password) {
-        setFormError('Username, email, and password are required');
+      if (!formData.email || !formData.password) {
+        setFormError('email, and password are required');
         return;
       }
 
@@ -77,19 +76,6 @@ export const Register: React.FC = () => {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className={styles.formGroup}>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={formData.username}
-            onChange={handleInputChange}
-            disabled={isLoading}
-            className={styles.input}
-          />
-        </div>
-
         <div className={styles.formGroup}>
           <label htmlFor="email">Email:</label>
           <input

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import { ToastProvider } from './components/Toast';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import { DevModeIndicator } from './components/DevModeIndicator';
+// import { DevModeIndicator } from './components/DevModeIndicator';
 import { UserRole } from './types/roles';
 
 // Public pages
@@ -232,7 +232,7 @@ function App() {
             {/* ==================== 404 ROUTE (MUST BE LAST) ==================== */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <DevModeIndicator />
+          {/*<DevModeIndicator />*/}
         </ToastProvider>
       </AuthProvider>
     </BrowserRouter>

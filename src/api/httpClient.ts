@@ -1,12 +1,8 @@
 import axios, { AxiosError } from 'axios';
 import type { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import { HttpClientError } from '../types/api';
-import { isDevModeEnabled, getMockToken, logDevModeStatus } from '../utils/devMode';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
-
-// Log dev mode status
-logDevModeStatus();
 
 // Create axios instance
 const httpClient: AxiosInstance = axios.create({
@@ -58,14 +54,7 @@ export const clearAllAuth = (): void => {
 // Request interceptor - attach JWT token to all requests
 httpClient.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    let token: string | null = null;
-
-    // In dev mode, use mock token; otherwise use actual token
-    if (isDevModeEnabled()) {
-      token = getMockToken();
-    } else {
-      token = getToken();
-    }
+    const token: string | null = getToken();
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -82,8 +71,7 @@ httpClient.interceptors.response.use(
   (response) => response,
   (error: AxiosError) => {
     // If 401 Unauthorized, clear auth and auth state will handle redirect
-    // In dev mode, skip this handling as we're using mock tokens
-    if (error.response?.status === 401 && !isDevModeEnabled()) {
+    if (error.response?.status === 401) {
       clearAllAuth();
       // Dispatch a custom event to notify auth context of token expiration
       window.dispatchEvent(new CustomEvent('auth:token-expired'));

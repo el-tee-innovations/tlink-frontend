@@ -8,7 +8,7 @@ export const Login: React.FC = () => {
   const navigate = useNavigate();
   const { isAuthenticated, login, setError, error } = useAuth();
   const [formData, setFormData] = useState({
-    username: '',
+    email: '',
     password: '',
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -35,7 +35,7 @@ export const Login: React.FC = () => {
 
     try {
       // Validate inputs
-      if (!formData.username || !formData.password) {
+      if (!formData.email || !formData.password) {
         setFormError('Username and password are required');
         return;
       }
@@ -78,12 +78,12 @@ export const Login: React.FC = () => {
 
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={formData.username}
+            id="email"
+            name="email"
+            value={formData.email}
             onChange={handleInputChange}
             disabled={isLoading}
             className={styles.input}

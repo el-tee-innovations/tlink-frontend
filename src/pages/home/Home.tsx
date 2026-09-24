@@ -3,9 +3,11 @@ import { useAuth } from '../../auth/useAuth';
 import { Layout } from '../../components/Layout';
 import { Card, CardBody } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
+import { useNavigate } from 'react-router-dom';
 
 export const Home: React.FC = () => {
   const { isAuthenticated, user } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <Layout showNavbar={false} className="bg-gray-50">
@@ -26,7 +28,11 @@ export const Home: React.FC = () => {
                   <div className="text-3xl mb-4">👤</div>
                   <h3 className="text-xl font-semibold mb-2">Job Seeker?</h3>
                   <p className="mb-4" style={{ opacity: 0.9 }}>Find your next opportunity</p>
-                  <Button variant="outline" className="bg-white text-primary hover:bg-gray-50">
+                  <Button
+                    variant="outline"
+                    className="bg-white text-primary hover:bg-gray-50"
+                    onClick={() => navigate('/register')}
+                  >
                     Sign Up Now
                   </Button>
                 </CardBody>
@@ -37,7 +43,11 @@ export const Home: React.FC = () => {
                   <div className="text-3xl mb-4">💼</div>
                   <h3 className="text-xl font-semibold mb-2">Recruiter?</h3>
                   <p className="mb-4" style={{ opacity: 0.9 }}>Find top talent</p>
-                  <Button variant="outline" className="bg-white text-secondary hover:bg-gray-50">
+                  <Button
+                    variant="outline"
+                    className="bg-white text-secondary hover:bg-gray-50"
+                    onClick={() => navigate('/register')}
+                  >
                     Sign Up Now
                   </Button>
                 </CardBody>
@@ -51,7 +61,7 @@ export const Home: React.FC = () => {
         <div className="container py-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-2">
-              Welcome back, {user?.firstName || user?.username}! 👋
+              Welcome {user?.firstName || user?.username}! 👋
             </h2>
             <p className="text-lg text-gray-600">
               Role: <strong className="text-primary">{user?.role?.replace(/_/g, ' ')}</strong>
@@ -67,7 +77,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">📊</div>
                     <h3 className="text-lg font-semibold mb-2">Dashboard</h3>
                     <p className="text-gray-600 mb-4">View job listings tailored to your skills</p>
-                    <Button variant="primary" size="sm" fullWidth>
+                    <Button variant="primary" size="sm" fullWidth onClick={() => navigate('/dashboard')}>
                       Go to Dashboard →
                     </Button>
                   </CardBody>
@@ -78,7 +88,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">👤</div>
                     <h3 className="text-lg font-semibold mb-2">Profile</h3>
                     <p className="text-gray-600 mb-4">Update your profile information</p>
-                    <Button variant="secondary" size="sm" fullWidth>
+                    <Button variant="secondary" size="sm" fullWidth onClick={() => navigate('/profile')}>
                       Edit Profile →
                     </Button>
                   </CardBody>
@@ -89,7 +99,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">📋</div>
                     <h3 className="text-lg font-semibold mb-2">Applications</h3>
                     <p className="text-gray-600 mb-4">Track your job applications</p>
-                    <Button variant="warning" size="sm" fullWidth>
+                    <Button variant="warning" size="sm" fullWidth onClick={() => navigate('/applications')}>
                       View Applications →
                     </Button>
                   </CardBody>
@@ -104,7 +114,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">📊</div>
                     <h3 className="text-lg font-semibold mb-2">Dashboard</h3>
                     <p className="text-gray-600 mb-4">View your posted jobs and applications</p>
-                    <Button variant="primary" size="sm" fullWidth>
+                    <Button variant="primary" size="sm" fullWidth onClick={() => navigate('/recruiter/dashboard')}>
                       Go to Dashboard →
                     </Button>
                   </CardBody>
@@ -115,7 +125,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">💼</div>
                     <h3 className="text-lg font-semibold mb-2">Post Job</h3>
                     <p className="text-gray-600 mb-4">Create a new job listing</p>
-                    <Button variant="success" size="sm" fullWidth>
+                    <Button variant="success" size="sm" fullWidth onClick={() => navigate('/recruiter/post-job')}>
                       Post Job →
                     </Button>
                   </CardBody>
@@ -126,7 +136,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">📈</div>
                     <h3 className="text-lg font-semibold mb-2">Analytics</h3>
                     <p className="text-gray-600 mb-4">View job statistics and metrics</p>
-                    <Button variant="outline" size="sm" fullWidth>
+                    <Button variant="outline" size="sm" fullWidth onClick={() => navigate('/recruiter/analytics')}>
                       View Analytics →
                     </Button>
                   </CardBody>
@@ -141,7 +151,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">📊</div>
                     <h3 className="text-lg font-semibold mb-2">Dashboard</h3>
                     <p className="text-gray-600 mb-4">Platform overview and metrics</p>
-                    <Button variant="primary" size="sm" fullWidth>
+                    <Button variant="primary" size="sm" fullWidth onClick={() => navigate('/admin/dashboard')}>
                       Go to Dashboard →
                     </Button>
                   </CardBody>
@@ -152,7 +162,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">👥</div>
                     <h3 className="text-lg font-semibold mb-2">Users</h3>
                     <p className="text-gray-600 mb-4">Manage user accounts</p>
-                    <Button variant="error" size="sm" fullWidth>
+                    <Button variant="error" size="sm" fullWidth onClick={() => navigate('/admin/users')}>
                       Manage Users →
                     </Button>
                   </CardBody>
@@ -163,7 +173,7 @@ export const Home: React.FC = () => {
                     <div className="text-2xl mb-3">💼</div>
                     <h3 className="text-lg font-semibold mb-2">Jobs</h3>
                     <p className="text-gray-600 mb-4">Manage all job listings</p>
-                    <Button variant="success" size="sm" fullWidth>
+                    <Button variant="success" size="sm" fullWidth onClick={() => navigate('/admin/jobs')}>
                       Manage Jobs →
                     </Button>
                   </CardBody>
@@ -178,10 +188,10 @@ export const Home: React.FC = () => {
             <CardBody className="text-center p-6">
               <p className="text-gray-600 mb-4">Already have an account?</p>
               <div className="flex gap-3 justify-center">
-                <Button variant="outline" size="sm">
+                <Button variant="outline" size="sm" onClick={() => navigate('/login')}>
                   Login
                 </Button>
-                <Button variant="primary" size="sm">
+                <Button variant="primary" size="sm" onClick={() => navigate('/register')}>
                   Register
                 </Button>
               </div>
